@@ -1,18 +1,24 @@
 package main
 
-func main(){
-	s := 5;
-	r := 3;
-	n := 2;
-	p := 1;
+import "fmt"
 
-	while(r > 0){
-		if(p % 2 == 1){
-			p = p*s % n;
+func Mod_exp(s, r, n int) int {
+	p := 1
+	for r > 0 {
+		if r%2 == 1 {
+			p = p * s % n
 		}
-		s = s*s % n;
-		r = r / 2;
+		s = s * s % n
+		r = int(r / 2)
+		//fmt.Println(r)
 	}
+	return p
+}
 
-	fmt.Println(p);
+func main() {
+	s := 78
+	r := 589
+	n := 1829
+
+	fmt.Println(Mod_exp(s, r, n))
 }
