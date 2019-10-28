@@ -1,6 +1,6 @@
-let s = 5;
-let r = 3;
-let n = 2;
+let s = 79;
+let r = 859;
+let n = 1829;
 let p = 1;
 
 while(r > 0){
@@ -8,5 +8,7 @@ while(r > 0){
         p = p*s % n;
     }
     s = s*s % n;
-    r = r / 2;
+    r = Math.floor(r / 2);
 }
+
+console.log(p);

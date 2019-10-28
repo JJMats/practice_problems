@@ -17,7 +17,7 @@ func Mod_exp(s, r, n int) int {
 
 func main() {
 	s := 78
-	r := 589
+	r := 859
 	n := 1829
 
 	fmt.Println(Mod_exp(s, r, n))
