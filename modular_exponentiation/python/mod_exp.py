@@ -1,14 +1,19 @@
+# Use modular exponentiation to generate ciphertext from a given input
+
 import sys
 
-s = int(input("Enter an x-value:"))
-r = int(input("Enter a y-value:"))
-n = int(input("Enter a mod-value:"))
-p = 1
+def mod_exp(s, r, n):
+    p = 1
+    while(r > 0):
+        if(r % 2 == 1):
+            p = p*s % n
+        s = s*s % n
+        r = int(r / 2)
+    
+    return p
 
-while (r > 0):
-    if(r % 2 == 1):
-        p = p*s % n
-    s = s*s % n
-    r = r / 2
+s = int(input("Enter an x-value: "))
+r = int(input("Enter a y-value: "))
+n = int(input("Enter a mod-value: "))
 
-print(p)
+print("Result:", mod_exp(s, r, n))
